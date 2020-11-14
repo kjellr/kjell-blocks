@@ -122,7 +122,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
 	text-decoration: none;
 	border-bottom: none;
-	color: cyan;
+	color: var(--wp--preset--color--primary);
 	position: relative;
 }
 
@@ -137,7 +137,7 @@ a:hover {
 	top: 60%;
 	content: "";
 	width: 100%;
-	border-bottom: 2px solid cyan;
+	border-bottom: 2px solid var(--wp--preset--color--primary);
 	transform: rotate(2deg);
 	-webkit-animation: spin-backwards 40s linear infinite;
 	animation: spin-backwards 40s linear infinite;
@@ -149,7 +149,7 @@ a:hover {
 	}
 
 	.home .wp-site-blocks a:hover {
-		color: cyan;
+		color: var(--wp--preset--color--primary);
 	}
 
 	.home .wp-site-blocks a::after {
@@ -241,13 +241,13 @@ a:hover {
 
 .wp-site-blocks .wp-block-social-links.is-style-logos-only .wp-social-link:hover {
 	transform: scale(1);
-	color: cyan;
+	color: var(--wp--preset--color--primary);
 }
 
 .wp-site-blocks .wp-block-social-links.is-style-logos-only .wp-social-link:hover svg,
 .wp-site-blocks .wp-block-social-links.is-style-logos-only .wp-social-link-linkedin .wp-social-link:hover svg {
 	transform: rotate(-360deg);
-	fill: cyan;
+	fill: var(--wp--preset--color--primary);
 }
 
 .wp-site-blocks .wp-social-link a::after {
