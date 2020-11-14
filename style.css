@@ -1,0 +1,268 @@
+/*
+Theme Name: Kjell Blocks
+Theme URI: https://kjellr.com/
+Author: Kjell Reigstad
+Description: A theme for kjellr.com
+Requires at least: 5.3
+Tested up to: 5.5
+Requires PHP: 5.6
+Version: 2.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: kjellr
+
+Kjell Blocks is distributed under the terms of the GNU GPL.
+
+Manrope font by Mikhail Sharanda.
+Distributed under the SIL Open Font License, Version 1.1.
+https://manropefont.com/
+*/
+
+/* Fonts */
+
+@font-face {
+	font-family: "Manrope";
+	src: url("fonts/Manrope-Regular.woff2") format("woff2"),
+		 url("fonts/Manrope-Regular.woff") format("woff");
+}
+
+/* Basic Typography */
+
+body,
+.has-normal-font-size {
+	font-family: "Manrope", Helvetica, Arial, sans-serif;
+	line-height: var(--wp--custom--line-height--normal);
+}
+
+.has-large-font-size {
+	line-height: var(--wp--custom--line-height--large);
+}
+
+.has-huge-font-size {
+	line-height: var(--wp--custom--line-height--huge);
+}
+
+p.has-huge-font-size {
+	margin-bottom: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+/* Site Header */
+
+.wp-block-site-title {
+	text-indent: -99999999px;
+	height: 11vw;
+	min-height: 72px;
+	width: 0;
+	font-size: var(--wp--preset--font-size--huge);
+	margin-top: 0;
+	margin-bottom: 1.75em;
+}
+
+@media screen and (min-width: 580px) {
+
+	.wp-block-site-title {
+		margin-bottom: 1.5em;
+	}
+}
+
+.site-header {
+	margin: 2.5vw 0 0 0;
+	padding: 0;
+}
+
+.site-header p {
+	margin-top: 0;
+	margin-bottom: 0;
+	position: fixed;
+}
+
+.site-header svg {
+	height: 10vw;
+	min-height: 72px;
+	width: auto;
+	-webkit-animation: spin 10s linear infinite;
+	animation: spin 10s linear infinite;
+}
+
+.site-header svg:hover path {
+	fill: #FFF;
+}
+
+.site-header svg:hover circle {
+	stroke: #FFF;
+}
+
+.home .site-header .home-link::after {
+	display: none;
+}
+
+@-webkit-keyframes spin { 
+	100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+	100% { transform:rotate(360deg); }
+}
+
+/* Site Footer */
+
+.wp-site-blocks .site-footer .wp-block-social-links {
+	margin-bottom: 0;
+}
+
+.wp-site-blocks .site-footer .email-link::after {
+	display: none;
+}
+
+/* Links */
+
+a {
+	text-decoration: none;
+	border-bottom: none;
+	color: cyan;
+	position: relative;
+}
+
+a:hover {
+	color: currentColor;
+}
+
+.home .wp-site-blocks a::after {
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	top: 60%;
+	content: "";
+	width: 100%;
+	border-bottom: 2px solid cyan;
+	transform: rotate(2deg);
+	-webkit-animation: spin-backwards 40s linear infinite;
+	animation: spin-backwards 40s linear infinite;
+}
+
+@media screen and (min-width: 580px) {
+	.home .wp-site-blocks a {
+		color: currentColor;
+	}
+
+	.home .wp-site-blocks a:hover {
+		color: cyan;
+	}
+
+	.home .wp-site-blocks a::after {
+		-webkit-animation: none;
+		animation: none;
+		border-width: 4px;
+		transition: 5s transform ease-in-out;
+	}
+
+	.home .wp-site-blocks a:hover::after {
+		transform: rotate(-360deg);
+	}
+}
+
+@-webkit-keyframes spin-backwards { 
+	100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin-backwards {
+	100% { transform:rotate(360deg); }
+}
+
+/* "Random" rotations */
+
+.home .wp-site-blocks .a-wordpress::after {
+	transform: rotate(-3deg);
+	-webkit-animation-duration: 60s;
+	animation-duration: 60s;
+}
+
+.home .wp-site-blocks .a-twentynineteen::after {
+	transform: rotate(-1deg);
+	-webkit-animation-duration: 80s;
+	animation-duration: 80s;
+}
+
+.home .wp-site-blocks .a-longreads::after {
+	transform: rotate(3deg);
+}
+
+.home .wp-site-blocks .a-razorfish::after {
+	transform: rotate(-2deg);
+	-webkit-animation-duration: 50s;
+	animation-duration: 50s;
+}
+
+.home .wp-site-blocks .a-pratt::after {
+	transform: rotate(-3deg);
+}
+
+.home .wp-site-blocks .a-razorfish::after {
+	transform: rotate(-2deg);
+	-webkit-animation-duration: 60s;
+	animation-duration: 60s;
+}
+
+.home .wp-site-blocks .a-isobar::after {
+	transform: rotate(2deg);
+}
+
+.home .wp-site-blocks .a-projects::after {
+	transform: rotate(-1deg);
+	-webkit-animation-duration: 80s;
+	animation-duration: 80s;
+}
+
+.home .wp-site-blocks .a-write::after {
+	transform: rotate(-3deg);
+}
+
+.home .wp-site-blocks .a-present::after {
+	transform: rotate(5deg);
+	-webkit-animation-duration: 40s;
+	animation-duration: 40s;
+}
+
+/* Image Block */
+
+.wp-block-image.alignfull img, 
+.wp-block-image.alignwide img {
+	height: auto;
+}
+
+/* Social Block */
+
+.wp-site-blocks .wp-block-social-links.is-style-logos-only .wp-social-link svg {
+	fill: #FFF;
+	transition: transform 2s ease-in-out;
+}
+
+.wp-site-blocks .wp-block-social-links.is-style-logos-only .wp-social-link:hover {
+	transform: scale(1);
+	color: cyan;
+}
+
+.wp-site-blocks .wp-block-social-links.is-style-logos-only .wp-social-link:hover svg,
+.wp-site-blocks .wp-block-social-links.is-style-logos-only .wp-social-link-linkedin .wp-social-link:hover svg {
+	transform: rotate(-360deg);
+	fill: cyan;
+}
+
+.wp-site-blocks .wp-social-link a::after {
+	display: none;
+}
+
+/* Columns */
+
+.wp-block-column *:first-child {
+	margin-top: 0;
+}
+
+/* List */
+
+ul.is-style-none li,
+ol.is-style-none li {
+	margin-bottom: 1em;
+}

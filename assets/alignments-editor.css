@@ -1,0 +1,17 @@
+/*
+ * Alignments, loaded in the editor-end only.
+ */
+
+.wp-block {
+	max-width: var(--wp--custom--width--default);
+	margin-left: 0;
+}
+
+.wp-block[data-align="wide"] {
+	max-width: var(--wp--custom--width--wide);
+	margin-left: 0;
+}
+
+.wp-block[data-align="full"] {
+	max-width: inherit;
+}
