@@ -3,6 +3,9 @@
 if ( ! function_exists( 'kjell_blocks_support' ) ) :
 	function kjell_blocks_support()  {
 
+		// Featured image support.
+		add_theme_support( 'post-thumbnails' );
+
 		// Alignwide and alignfull classes in the block editor
 		add_theme_support( 'align-wide' );
 
