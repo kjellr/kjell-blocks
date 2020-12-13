@@ -260,6 +260,25 @@ a:hover {
 	margin-top: 0;
 }
 
+/* Gallery */
+
+.blocks-gallery-grid .blocks-gallery-image figure, 
+.blocks-gallery-grid .blocks-gallery-item figure, 
+.wp-block-gallery .blocks-gallery-image figure, 
+.wp-block-gallery .blocks-gallery-item figure {
+	flex-direction: column;
+}
+
+.blocks-gallery-grid .blocks-gallery-image figcaption, 
+.blocks-gallery-grid .blocks-gallery-item figcaption, 
+.wp-block-gallery .blocks-gallery-image figcaption, 
+.wp-block-gallery .blocks-gallery-item figcaption {
+	position: relative;
+	padding: 0.75em 0;
+	background: transparent;
+	text-align: left;
+}
+
 /* List */
 
 ul.is-style-none li,
