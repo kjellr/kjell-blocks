@@ -75,6 +75,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .site-header p {
+	z-index: 9999;
 	margin-top: 0;
 	margin-bottom: 0;
 	position: fixed;
@@ -211,8 +212,8 @@ a:hover {
 
 .home .wp-site-blocks .a-projects::after {
 	transform: rotate(-1deg);
-	-webkit-animation-duration: 80s;
-	animation-duration: 80s;
+	-webkit-animation-duration: 100s;
+	animation-duration: 100s;
 }
 
 .home .wp-site-blocks .a-write::after {
@@ -227,6 +228,7 @@ a:hover {
 
 /* Image Block */
 
+.wp-block-image img,
 .wp-block-image.alignfull img, 
 .wp-block-image.alignwide img {
 	height: auto;
@@ -269,6 +271,20 @@ a:hover {
 	flex-direction: column;
 }
 
+.blocks-gallery-grid .blocks-gallery-image figure a, 
+.blocks-gallery-grid .blocks-gallery-item figure a, 
+.wp-block-gallery .blocks-gallery-image figure a, 
+.wp-block-gallery .blocks-gallery-item figure a {
+	transition: opacity 0.2s ease-in-out;
+}
+
+.blocks-gallery-grid .blocks-gallery-image figure a:hover, 
+.blocks-gallery-grid .blocks-gallery-item figure a:hover, 
+.wp-block-gallery .blocks-gallery-image figure a:hover, 
+.wp-block-gallery .blocks-gallery-item figure a:hover {
+	opacity: 0.85;
+}
+
 .blocks-gallery-grid .blocks-gallery-image figcaption, 
 .blocks-gallery-grid .blocks-gallery-item figcaption, 
 .wp-block-gallery .blocks-gallery-image figcaption, 
@@ -277,6 +293,37 @@ a:hover {
 	padding: 0.75em 0;
 	background: transparent;
 	text-align: left;
+}
+
+.blocks-gallery-grid .blocks-gallery-image figcaption a, 
+.blocks-gallery-grid .blocks-gallery-item figcaption a, 
+.wp-block-gallery .blocks-gallery-image figcaption a, 
+.wp-block-gallery .blocks-gallery-item figcaption a {
+	color: var(--wp--preset--color--foreground);
+}
+
+@media screen and (max-width: 480px) {
+	.blocks-gallery-grid .blocks-gallery-image, 
+	.blocks-gallery-grid .blocks-gallery-item, 
+	.wp-block-gallery .blocks-gallery-image, 
+	.wp-block-gallery .blocks-gallery-item {
+		width: 100%;
+	}
+
+	.blocks-gallery-grid .blocks-gallery-image, 
+	.blocks-gallery-grid .blocks-gallery-item, 
+	.wp-block-gallery .blocks-gallery-image, 
+	.wp-block-gallery .blocks-gallery-item,
+	.blocks-gallery-grid .blocks-gallery-image:nth-of-type(2n), 
+	.blocks-gallery-grid .blocks-gallery-item:nth-of-type(2n), 
+	.wp-block-gallery .blocks-gallery-image:nth-of-type(2n), 
+	.wp-block-gallery .blocks-gallery-item:nth-of-type(2n),
+	.blocks-gallery-grid .blocks-gallery-image:last-child, 
+	.blocks-gallery-grid .blocks-gallery-item:last-child, 
+	.wp-block-gallery .blocks-gallery-image:last-child, 
+	.wp-block-gallery .blocks-gallery-item:last-child {
+		margin-right: 0;
+	}
 }
 
 /* List */
