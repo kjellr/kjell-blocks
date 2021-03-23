@@ -26,11 +26,19 @@ https://manropefont.com/
 		 url("fonts/Manrope-Regular.woff") format("woff");
 }
 
+/* Basic Colors */
+
+body {
+	background-color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--foreground);
+}
+
 /* Basic Typography */
 
 body,
 .has-normal-font-size {
 	font-family: "Manrope", Helvetica, Arial, sans-serif;
+	font-size: var(--wp--preset--font-size--normal);
 	line-height: var(--wp--custom--line-height--normal);
 }
 
