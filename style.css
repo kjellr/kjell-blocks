@@ -75,9 +75,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .site-header p {
-	z-index: 9999;
+	position: absolute;
 	margin-top: 0;
 	margin-bottom: 0;
+}
+
+/* Make the header sticky on the homepage. */
+.home .site-header p {
+	z-index: 9999;
 	position: fixed;
 }
 
@@ -110,12 +115,41 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Site Footer */
 
+.site-footer .wp-block-columns .is-vertically-aligned-bottom *:first-child {
+	margin-top: 1em;
+}
+
+.site-footer .wp-block-columns a {
+	margin-left: 1em;
+}
+
 .wp-site-blocks .site-footer .wp-block-social-links {
 	margin-bottom: 0;
 }
 
-.wp-site-blocks .site-footer .email-link::after {
+.wp-site-blocks .site-footer .footer-links {
+	color: #FFF;
+}
+
+.wp-site-blocks .site-footer .footer-links:hover {
+	color: var(--wp--preset--color--primary);
+}
+
+.wp-site-blocks .site-footer .footer-links::after {
 	display: none;
+}
+
+@media screen and (max-width: 580px) {
+	.site-footer .wp-block-columns .alignright.has-text-align-right {
+		text-align: left;
+		float: none;
+		margin-left: 0;
+		margin-bottom: 1.5em;
+	}
+
+	.site-footer .wp-block-columns .alignright.has-text-align-right a:first-child {
+		margin-left: 0;
+	}
 }
 
 /* Links */
@@ -142,6 +176,19 @@ a:hover {
 	transform: rotate(2deg);
 	-webkit-animation: spin-backwards 40s linear infinite;
 	animation: spin-backwards 40s linear infinite;
+}
+
+/* Only show on child pages. */
+.all-projects-link + .wp-block-post-title {
+	margin-top: 0.25em;
+}
+
+body:not(.page-child) .all-projects-link {
+	display: none;
+}
+
+body:not(.page-child) .all-projects-link + .wp-block-post-title {
+	margin-top: 0;
 }
 
 @media screen and (min-width: 580px) {
@@ -264,6 +311,13 @@ a:hover {
 
 /* Gallery */
 
+.blocks-gallery-grid .blocks-gallery-image, 
+.blocks-gallery-grid .blocks-gallery-item, 
+.wp-block-gallery .blocks-gallery-image, 
+.wp-block-gallery .blocks-gallery-item {
+	flex-grow: 0;
+}
+
 .blocks-gallery-grid .blocks-gallery-image figure, 
 .blocks-gallery-grid .blocks-gallery-item figure, 
 .wp-block-gallery .blocks-gallery-image figure, 
@@ -331,4 +385,11 @@ a:hover {
 ul.is-style-none li,
 ol.is-style-none li {
 	margin-bottom: 1em;
+}
+
+/* CoBlocks Gallery */
+
+.coblocks-lightbox__background {
+	background: var(--wp--preset--color--background) !important;
+	filter: blur(0px) !important;
 }
