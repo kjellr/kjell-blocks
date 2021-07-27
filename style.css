@@ -200,23 +200,14 @@ body:not(.page-child) .all-projects-link + .wp-block-post-title {
 }
 
 @media screen and (min-width: 580px) {
-	.home .wp-site-blocks a {
-		color: currentColor;
-	}
-
-	.home .wp-site-blocks a:hover {
-		color: var(--wp--preset--color--primary);
-	}
-
 	.home .wp-site-blocks a::after {
-		-webkit-animation: none;
-		animation: none;
 		border-width: 4px;
-		transition: 5s transform ease-in-out;
+		transition: all 0.2s ease-in-out;
 	}
 
 	.home .wp-site-blocks a:hover::after {
-		transform: rotate(-360deg);
+		border-width: 0px;
+		animation-play-state: paused;
 	}
 }
 
@@ -225,6 +216,14 @@ body:not(.page-child) .all-projects-link + .wp-block-post-title {
 }
 @keyframes spin-backwards {
 	100% { transform:rotate(360deg); }
+}
+
+@media (prefers-reduced-motion) {
+	.home .wp-site-blocks a::after,
+	.site-header svg {
+		animation:  none;
+		transition: none !important;
+	}
 }
 
 /* "Random" rotations */
