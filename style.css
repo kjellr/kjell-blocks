@@ -227,6 +227,14 @@ body:not(.page-child) .all-projects-link + .wp-block-post-title {
 	100% { transform:rotate(360deg); }
 }
 
+@media (prefers-reduced-motion) {
+	.home .wp-site-blocks a::after,
+	.site-header svg {
+		animation:  none;
+		transition: none !important;
+	}
+}
+
 /* "Random" rotations */
 
 .home .wp-site-blocks .a-wordpress::after {
