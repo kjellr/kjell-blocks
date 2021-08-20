@@ -38,7 +38,7 @@
 				{
 					"slug": "small",
 					"name": "Small",
-					"size": "clamp(18px, 2.5vw, 20px)"
+					"size": "clamp(18px, 2.5vw, 22px)"
 				},
 				{
 					"slug": "normal",
