@@ -191,11 +191,11 @@ a:hover {
 	margin-top: 0.25em;
 }
 
-body:not(.page-child) .all-projects-link {
+body:not(.page-child):not(.single-post) .all-projects-link {
 	display: none;
 }
 
-body:not(.page-child) .all-projects-link + .wp-block-post-title {
+body:not(.page-child):not(.single-post) .all-projects-link + .wp-block-post-title {
 	margin-top: 0;
 }
 
