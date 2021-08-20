@@ -409,3 +409,16 @@ ol.is-style-none li {
 	background: var(--wp--preset--color--background) !important;
 	filter: blur(0px) !important;
 }
+
+/* Single Post */
+
+.single-post .all-projects-link,
+.single-post .wp-block-post-date {
+	display: inline-block;
+}
+
+.single-post .all-projects-link:after {
+	display: inline-block;
+	content: "•";
+	margin: auto 0.5em;
+}
