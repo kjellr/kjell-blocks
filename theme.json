@@ -1,5 +1,14 @@
 {
 	"version": 1,
+	"customTemplates": [
+		{
+			"name": "single-no-featured-image",
+			"title": "No Featured Image",
+			"postTypes": [
+				"post"
+			]
+		}
+	],
 	"settings": {
 		"color": {
 			"palette": [
