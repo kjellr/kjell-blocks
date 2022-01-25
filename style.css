@@ -364,6 +364,7 @@ ol.is-style-none li {
 
 .wp-block-image figcaption {
 	font-size: var(--wp--preset--font-size--small);
+	text-align: left;
 }
 
 .wp-block-image figcaption a {
