@@ -18,6 +18,12 @@ Distributed under the SIL Open Font License, Version 1.1.
 https://manropefont.com/
 */
 
+/* View transitions */
+
+@view-transition {
+  navigation: auto;
+}
+
 /* Fonts */
 
 @font-face {
