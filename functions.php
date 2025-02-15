@@ -40,9 +40,6 @@ function kjell_blocks_scripts() {
 
 	// Enqueue alignments stylesheet.
 	wp_enqueue_style( 'kjell-blocks-alignments-style', get_template_directory_uri() . '/assets/alignments-front.css', array(), wp_get_theme()->get( 'Version' ) );
-
-	// Enqueue gallery javascript.
-	wp_enqueue_script( 'kjell-blocks-gallery-links', get_theme_file_uri( '/assets/gallery-links.js' ), array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
 }
 add_action( 'wp_enqueue_scripts', 'kjell_blocks_scripts' );
 
