@@ -45,3 +45,10 @@ function kjell_blocks_scripts() {
 	wp_enqueue_script( 'kjell-blocks-gallery-links', get_theme_file_uri( '/assets/gallery-links.js' ), array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
 }
 add_action( 'wp_enqueue_scripts', 'kjell_blocks_scripts' );
+
+function kjell_blocks_preload_fonts() {
+    ?>
+    <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/fonts/Manrope-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <?php
+}
+add_action('wp_head', 'kjell_blocks_preload_fonts', 1);
