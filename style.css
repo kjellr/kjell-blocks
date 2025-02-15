@@ -191,9 +191,10 @@ a:hover {
 	content: "";
 	width: 100%;
 	border-bottom: 2px solid var(--wp--preset--color--primary);
-	transform: rotate(2deg);
+	transform: rotate(2deg) translateZ(0);
 	-webkit-animation: spin-backwards 40s linear infinite;
 	animation: spin-backwards 40s linear infinite;
+    backface-visibility: hidden;
 }
 
 /* Only show on child pages. */
