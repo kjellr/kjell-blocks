@@ -108,8 +108,16 @@ h1, h2, h3, h4, h5, h6 {
 	height: 10vw;
 	min-height: 72px;
 	width: auto;
-	-webkit-animation: spin 10s linear infinite;
-	animation: spin 10s linear infinite;
+}
+
+.home-link svg {
+	animation: rotate 10s linear infinite;
+	transition: transform 10s ease-out;
+}
+
+.home-link:hover svg {
+	animation-play-state: paused;
+	transform: rotate(-1turn);
 }
 
 .site-header svg path {
@@ -121,18 +129,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .site-header svg:hover circle {
+	transition: 0.25s stroke ease-in-out;
+}
+
+.site-header svg:hover circle {
 	stroke: #FFF;
 }
 
 .home .site-header .home-link::after {
 	display: none;
-}
-
-@-webkit-keyframes spin { 
-	100% { -webkit-transform: rotate(360deg); }
-}
-@keyframes spin {
-	100% { transform:rotate(360deg); }
 }
 
 /* Site Footer */
@@ -346,7 +351,7 @@ ol.is-style-none li {
 /* Gallery / Captions */
 
 .wp-block-image a {
-	transition: 0.2s opacity ease-in-out;
+	transition: 0.25s opacity ease-in-out;
 }
 
 .wp-block-image a:hover {
