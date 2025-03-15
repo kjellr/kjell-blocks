@@ -18,10 +18,26 @@ Distributed under the SIL Open Font License, Version 1.1.
 https://manropefont.com/
 */
 
-/* View transitions */
+/* View transitions & page animations */
 
 @view-transition {
   navigation: auto;
+}
+
+.site-header + .wp-block-columns, 
+.wp-block-post-content {
+	animation: 0.25s slide-in ease-out forwards;
+}
+
+@keyframes slide-in {
+	from {
+		transform: translateY(1rem);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
 }
 
 /* Fonts */
