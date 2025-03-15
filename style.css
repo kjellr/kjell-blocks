@@ -112,6 +112,10 @@ h1, h2, h3, h4, h5, h6 {
 	animation: spin 10s linear infinite;
 }
 
+.site-header svg path {
+	transition: 0.25s fill ease-in-out;
+}
+
 .site-header svg:hover path {
 	fill: #FFF;
 }
@@ -177,6 +181,7 @@ a {
 	border-bottom: none;
 	color: var(--wp--preset--color--primary);
 	position: relative;
+	transition: 0.25s color ease-in-out;
 }
 
 a:hover {
@@ -191,9 +196,8 @@ a:hover {
 	content: "";
 	width: 100%;
 	border-bottom: 2px solid var(--wp--preset--color--primary);
-	transform: rotate(2deg) translateZ(0);
-	-webkit-animation: spin-backwards 40s linear infinite;
-	animation: spin-backwards 40s linear infinite;
+	transform: rotate(.0111turn) translateZ(0);
+	animation: rotate 40s linear infinite;
     backface-visibility: hidden;
 }
 
@@ -220,22 +224,18 @@ body:not(.page-child):not(.single-post) .all-projects-link + .wp-block-post-titl
 	}
 
 	.home .wp-site-blocks a::after {
-		-webkit-animation: none;
-		animation: none;
 		border-width: 4px;
 		transition: 5s transform ease-in-out;
 	}
 
 	.home .wp-site-blocks a:hover::after {
-		transform: rotate(-360deg);
+		animation-play-state: paused;
+		transform: rotate(-1turn);
 	}
 }
 
-@-webkit-keyframes spin-backwards { 
-	100% { -webkit-transform: rotate(360deg); }
-}
-@keyframes spin-backwards {
-	100% { transform:rotate(360deg); }
+@keyframes rotate {
+	to {rotate: 1turn}
 }
 
 @media (prefers-reduced-motion) {
@@ -249,54 +249,34 @@ body:not(.page-child):not(.single-post) .all-projects-link + .wp-block-post-titl
 /* "Random" rotations */
 
 .home .wp-site-blocks .a-wordpress::after {
-	transform: rotate(-3deg);
-	-webkit-animation-duration: 60s;
 	animation-duration: 60s;
 }
 
 .home .wp-site-blocks .a-twentynineteen::after {
-	transform: rotate(-1deg);
-	-webkit-animation-duration: 80s;
 	animation-duration: 80s;
 }
 
-.home .wp-site-blocks .a-longreads::after {
-	transform: rotate(3deg);
+.home .wp-site-blocks .a-pratt::after {
+	animation-duration: 70s;
 }
 
 .home .wp-site-blocks .a-razorfish::after {
-	transform: rotate(-2deg);
-	-webkit-animation-duration: 50s;
 	animation-duration: 50s;
 }
 
-.home .wp-site-blocks .a-pratt::after {
-	transform: rotate(-3deg);
-}
-
-.home .wp-site-blocks .a-razorfish::after {
-	transform: rotate(-2deg);
-	-webkit-animation-duration: 60s;
-	animation-duration: 60s;
-}
-
 .home .wp-site-blocks .a-isobar::after {
-	transform: rotate(2deg);
+	animation-duration: 80s;
 }
 
 .home .wp-site-blocks .a-projects::after {
-	transform: rotate(-1deg);
-	-webkit-animation-duration: 100s;
-	animation-duration: 100s;
+	animation-duration: 120s;
 }
 
 .home .wp-site-blocks .a-write::after {
-	transform: rotate(-3deg);
+	animation-duration: 50s;
 }
 
 .home .wp-site-blocks .a-present::after {
-	transform: rotate(5deg);
-	-webkit-animation-duration: 40s;
 	animation-duration: 40s;
 }
 
